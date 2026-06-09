@@ -1,0 +1,606 @@
+/* ===================================================
+   MUSEUM MEDAN GIS - Custom CSS
+   Tema: Dark Modern dengan aksen Merah
+   =================================================== */
+
+/* Import font Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    --bg-primary:    #0d0d0d;
+    --bg-secondary:  #1a1a1a;
+    --bg-card:       #1e1e1e;
+    --bg-sidebar:    #141414;
+    --accent-red:    #e63946;
+    --accent-red-dim:#c1121f;
+    --accent-glow:   rgba(230, 57, 70, 0.15);
+    --text-primary:  #f0f0f0;
+    --text-secondary:#a0a0a0;
+    --text-muted:    #666666;
+    --border-color:  #2a2a2a;
+    --success:       #2ecc71;
+    --warning:       #f39c12;
+    --info:          #3498db;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ===== SCROLLBAR CUSTOM ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--accent-red); border-radius: 3px; }
+
+/* ===== NAVBAR ===== */
+.navbar-custom {
+    background-color: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary) !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-brand span.brand-icon {
+    color: var(--accent-red);
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-primary) !important;
+    background-color: var(--accent-glow);
+}
+
+.nav-link.active {
+    color: var(--accent-red) !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, 
+        var(--bg-primary) 0%, 
+        #1a0a0a 50%, 
+        var(--bg-primary) 100%);
+    overflow: hidden;
+    padding: 4rem 0;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, var(--accent-glow) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(230,57,70,0.08) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title .highlight {
+    color: var(--accent-red);
+    position: relative;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 540px;
+}
+
+/* ===== CARDS ===== */
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent-red);
+}
+
+.stat-card:hover {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-3px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    opacity: 0.2;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.section-badge {
+    display: inline-block;
+    background: var(--accent-glow);
+    color: var(--accent-red);
+    border: 1px solid var(--accent-red);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary-custom {
+    background: var(--accent-red);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary-custom:hover {
+    background: var(--accent-red-dim);
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.btn-outline-custom {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-outline-custom:hover {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* ===== MAP CONTAINER ===== */
+#map {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: var(--bg-card);
+}
+
+.map-container {
+    height: 500px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.map-full {
+    height: calc(100vh - 180px);
+}
+
+/* ===== POPUP LEAFLET CUSTOM ===== */
+.leaflet-popup-content-wrapper {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--accent-red) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 20px var(--accent-glow) !important;
+    color: var(--text-primary) !important;
+}
+
+.leaflet-popup-tip {
+    background: var(--accent-red) !important;
+}
+
+.popup-nama {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    margin-bottom: 0.5rem;
+}
+
+.popup-info {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.25rem;
+}
+
+.popup-btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--accent-red);
+    color: white !important;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ===== SIDEBAR PETA ===== */
+.map-sidebar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    height: calc(100vh - 180px);
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ===== FORM KONTROL ===== */
+.form-control-dark {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.form-control-dark:focus {
+    outline: none;
+    border-color: var(--accent-red) !important;
+    box-shadow: 0 0 0 3px var(--accent-glow) !important;
+}
+
+.form-control-dark::placeholder {
+    color: var(--text-muted);
+}
+
+/* ===== MUSEUM LIST ITEM ===== */
+.museum-list-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.museum-list-item:hover {
+    border-color: var(--accent-red);
+    background: rgba(230, 57, 70, 0.05);
+}
+
+.museum-list-item .museum-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.museum-list-item .museum-cat {
+    font-size: 0.75rem;
+    color: var(--accent-red);
+    font-weight: 500;
+}
+
+/* ===== BADGE KATEGORI ===== */
+.badge-kategori {
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-sejarah  { background: rgba(52,152,219,0.15); color: #3498db; border: 1px solid #3498db; }
+.badge-seni     { background: rgba(155,89,182,0.15); color: #9b59b6; border: 1px solid #9b59b6; }
+.badge-edukasi  { background: rgba(46,204,113,0.15); color: #2ecc71; border: 1px solid #2ecc71; }
+.badge-alam     { background: rgba(39,174,96,0.15);  color: #27ae60; border: 1px solid #27ae60; }
+.badge-militer  { background: rgba(231,76,60,0.15);  color: #e74c3c; border: 1px solid #e74c3c; }
+
+/* ===== QUERY DISPLAY BOX ===== */
+.query-box {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-left: 3px solid var(--accent-red);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: #a8ff78;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.result-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* ===== ANALISIS CARDS ===== */
+.analisis-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.analisis-card:hover {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.analisis-card .card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.analisis-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.analisis-card .card-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+/* ===== JARAK RESULT ===== */
+.jarak-result {
+    background: linear-gradient(135deg, var(--bg-card), #1a0a0a);
+    border: 1px solid var(--accent-red);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.jarak-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    line-height: 1;
+}
+
+.jarak-unit {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+/* ===== TABLE ===== */
+.table-dark-custom {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.table-dark-custom thead th {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-dark-custom tbody td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(42,42,42,0.5);
+    color: var(--text-primary);
+    vertical-align: middle;
+}
+
+.table-dark-custom tbody tr:hover {
+    background: rgba(230, 57, 70, 0.04);
+}
+
+/* ===== RADIUS CIRCLE INDICATOR ===== */
+.radius-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.radius-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-red);
+    flex-shrink: 0;
+}
+
+/* ===== LOADING SPINNER ===== */
+.spinner-custom {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--accent-red);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 1rem auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== FOOTER ===== */
+.footer-custom {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ===== INFO SYSTEM CARD ===== */
+.info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    border-color: var(--accent-red);
+    transform: translateY(-3px);
+}
+
+.info-card .info-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.info-card .info-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+}
+
+.info-card .info-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* ===== ALERT CUSTOM ===== */
+.alert-custom {
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.alert-success { background: rgba(46,204,113,0.1); border: 1px solid #2ecc71; color: #2ecc71; }
+.alert-danger   { background: rgba(231,76,60,0.1);  border: 1px solid #e74c3c;  color: #e74c3c; }
+.alert-info     { background: rgba(52,152,219,0.1); border: 1px solid #3498db; color: #3498db; }
+.alert-warning  { background: rgba(243,156,18,0.1); border: 1px solid #f39c12; color: #f39c12; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    .map-full   { height: 400px; }
+    .map-sidebar { height: auto; max-height: 300px; }
+}
